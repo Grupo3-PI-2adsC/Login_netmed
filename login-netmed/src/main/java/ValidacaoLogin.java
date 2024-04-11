@@ -4,18 +4,11 @@ public class ValidacaoLogin {
 
         BuscarCredenciais buscar = new BuscarCredenciais();
 
-        String emailCorreta;
-        String senhaCorreta;
+        Boolean validar;
 
         if(email.contains(" ") && senha.contains(" ")){
             System.out.println("""
                     Não pode conter espaços no seu e-mail e senha!!!
-                                 --------------------
-                           Insita um e-mail e senha válidos""");
-            return false;
-        }else if (!email.contains("@netmed.com")){
-            System.out.println("""
-                            Seu email deve conter @netmed.com!!!
                                  --------------------
                            Insita um e-mail e senha válidos""");
             return false;
@@ -36,11 +29,9 @@ public class ValidacaoLogin {
 //            return false;
 //        }
 
-        emailCorreta = buscar.buscarEmail();
+        validar = buscar.validarCredenciais(email, senha);
 
-        senhaCorreta = buscar.buscarSenha();
-
-        if (email.equals(emailCorreta) && senha.equals(senhaCorreta)){
+        if (validar){
             return true;
         }else {
             System.out.println("Seu e-mail ou sua senha estão incorretos");
