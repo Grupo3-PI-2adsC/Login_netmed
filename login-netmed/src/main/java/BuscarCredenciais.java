@@ -5,9 +5,9 @@ import java.util.List;
 public class BuscarCredenciais {
 
 
-    String url = "jdbc:mysql://localhost:3306/_coloque_nome_database_";
-    String username = "_coloque_user_mysql_";
-    String password = "_coloque_senha_mysql_";
+    String url = "jdbc:mysql://localhost:3306/java";
+    String username = "root";
+    String password = "MaranatA@2004";
 
 
     public Boolean validarCredenciais(String email, String senha){

@@ -1,6 +1,25 @@
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.rede.Rede;
+import com.github.britooo.looca.api.group.rede.RedeInterface;
+import com.github.britooo.looca.api.group.rede.RedeInterfaceGroup;
+import com.google.common.graph.Network;
+import oshi.SystemInfo;
+import oshi.hardware.NetworkIF;
+
 public class ValidacaoLogin {
 
+    private final SystemInfo si;
+
+
+    public ValidacaoLogin(SystemInfo si) {
+        this.si = si;
+
+
+    }
+
+
     public Boolean validarLogin(String email, String senha) {
+
 
         BuscarCredenciais buscar = new BuscarCredenciais();
 
@@ -68,4 +87,6 @@ public class ValidacaoLogin {
 
         return true;
     }
+
+
 }
