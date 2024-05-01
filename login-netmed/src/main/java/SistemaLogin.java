@@ -2,71 +2,45 @@ import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.sistema.Sistema;
 import oshi.SystemInfo;
 
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 public class SistemaLogin {
 
     public static void main(String[] args) {
 
-        SystemInfo si = new SystemInfo();
-//        Scanner input = new Scanner(System.in);
-//        Scanner inputText = new Scanner(System.in);
-//
-//        ValidacaoLogin validar = new ValidacaoLogin(si);
-          Computador computador = new Computador();
-//        Boolean validou;
-//
-//        do {
-//
-//
-//            System.out.println("""
-//                    ----------------------------------------
-//                    |                                      |
-//                    |           Digite o seu email:        |
-//                    |                                      |
-//                    ----------------------------------------""");
-//
-//            String emailLogin = inputText.nextLine();
-//
-//
-//            System.out.println("""
-//                    ----------------------------------------
-//                    |                                      |
-//                    |           Digite a sua senha:        |
-//                    |                                      |
-//                    ----------------------------------------""");
-//            String senhaLogin = inputText.nextLine();
-//
-//            validou = validar.validarLogin(emailLogin, senhaLogin);
-//        }while (!validou.equals(true));
-//
-//        System.out.println("Bem vindo!!!");
+        Scanner input = new Scanner(System.in);
+        Scanner inputText = new Scanner(System.in);
 
-        Looca looca = new Looca();
-        Sistema sistema = new Sistema();
+        ValidacaoLogin validar = new ValidacaoLogin();
+        Boolean validou;
+
+            System.out.println("""
+                    ----------------------------------------
+                    |                                      |
+                    |           Digite o seu email:        |
+                    |                                      |
+                    ----------------------------------------""");
+
+            String emailLogin = inputText.nextLine();
 
 
-        System.out.println(computador);
+            System.out.println("""
+                    ----------------------------------------
+                    |                                      |
+                    |           Digite a sua senha:        |
+                    |                                      |
+                    ----------------------------------------""");
+            String senhaLogin = inputText.nextLine();
 
-//        System.out.println(sistema);
+            validou = validar.validarLogin(emailLogin, senhaLogin);
+            if (validou) {
+                Computador computador01 = new Computador();
 
-//        System.out.println(looca.getMemoria());
-
-//        System.out.println(looca.getRede());
-
-//        System.out.println(looca.getProcessador());
-
-//        System.out.println(looca.getSistema());
-
-//        System.out.println(looca.getDispositivosUsbGrupo());
-
-//        System.out.println(looca.getGrupoDeDiscos());
-
-//        System.out.println(looca.getGrupoDeJanelas());
-
-//        System.out.println(looca.getGrupoDeProcessos());
-
-//        System.out.println(looca.getTemperatura());
-
+                computador01.buscarInfos();
+            }
     }
+
 
 
 

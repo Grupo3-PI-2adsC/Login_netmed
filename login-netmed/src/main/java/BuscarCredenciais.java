@@ -16,14 +16,14 @@ public class BuscarCredenciais {
 
         Connection con = null;
 
-        String sql = "select * from testeJava where email = '%s' and senha = '%s';".formatted(email,senha);
+        String sql = "select * from javaTable where email = '%s' and senha = '%s';".formatted(email,senha);
 
 
         try {
             con = DriverManager.getConnection(url, username, password);
 
             Statement st = con.createStatement();
-
+            System.out.println(sql);
             ResultSet rs = st.executeQuery(sql);
 
             rs.next();

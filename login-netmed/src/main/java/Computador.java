@@ -1,3 +1,4 @@
+import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscoGrupo;
 import com.github.britooo.looca.api.group.discos.Volume;
@@ -19,6 +20,7 @@ import oshi.software.os.OSFileStore;
 import oshi.software.os.OperatingSystem;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Computador {
     private final SystemInfo system = new SystemInfo();
@@ -126,5 +128,18 @@ public class Computador {
 //                ", \nTotal de Thereads=" + processoGrupo.getTotalThreads() +
 //                ", \nProcessos=" + processoGrupo.getProcessos() +
                 "  \n}";
+    }
+
+    public void buscarInfos(){
+        Computador computador = new Computador();
+
+        System.out.println(computador);
+
+        try{
+            TimeUnit.SECONDS.sleep(10);
+            buscarInfos();
+        }catch (InterruptedException e){
+            System.out.println(e);
+        }
     }
 }
