@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.sql.Driver;
 public class BuscarCredenciais {
 
 
@@ -20,6 +20,7 @@ public class BuscarCredenciais {
 
 
         try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, username, password);
 
             Statement st = con.createStatement();
