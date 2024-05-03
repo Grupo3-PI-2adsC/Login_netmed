@@ -47,17 +47,24 @@ public class Computador {
         this.networkIfs = hal.getNetworkIFs().get(0);
         this.hwDiskStore  = hal.getDiskStores().get(0);
         this.osFileStore = os.getFileSystem().getFileStores().get(0);
+
+        //Fixos
         this.sistema = new Sistema();
-        this.memoria = new Memoria();
-        this.processador = new Processador();
-        this.processadorCacheLoader = new ProcessadorCacheLoader();
-        this.redeInterface = new RedeInterface(networkIfs);
         this.redeParametros = new RedeParametros(si);
-        this.grupoDeDiscos = new DiscoGrupo();
+
+        //Variaveis
+        this.memoria = new Memoria();
+        this.processadorCacheLoader = new ProcessadorCacheLoader();
+        this.servicoGrupo = new ServicoGrupo();
+
+        //duplo
+        this.processador = new Processador();
+        this.redeInterface = new RedeInterface(networkIfs);
+        this.grupoDeDiscos = new DiscoGrupo(); // volume, disco,
+        this.processoGrupo = new ProcessoGrupo();
+
         this.disco = new Disco(hwDiskStore);
         this.volume = new Volume(osFileStore);
-        this.servicoGrupo = new ServicoGrupo();
-        this.processoGrupo = new ProcessoGrupo();
     }
 
     public Sistema getSistema() {
@@ -106,6 +113,7 @@ public class Computador {
 
     @Override
     public String toString() {
+//        SERVIÇÕES E PROCESSOS SÃO OS MESMO MAS COM INFOS DIFERENTES
         return "Computador{" +
                 "  \nsistema=" + sistema +
                 ", \nmemoria=" + memoria +
@@ -132,8 +140,8 @@ public class Computador {
 
     public void buscarInfos(){
         Computador computador = new Computador();
-
-        System.out.println(computador);
+        String sistemaFixo = computador.getSistema().toString();
+        System.out.println(sistemaFixo);
 
         try{
             TimeUnit.SECONDS.sleep(10);
