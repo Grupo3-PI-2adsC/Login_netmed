@@ -9,14 +9,11 @@ import java.util.List;
 import java.sql.Driver;
 public class BuscarCredenciais {
 
-<<<<<<< HEAD
 
     String url = "jdbc:mysql://localhost:3306/_coloque_nome_database_";
     String username = "_coloque_user_mysql_";
     String password = "_coloque_senha_mysql_";
 
-=======
->>>>>>> branch-api-bd
     public Boolean validarCredenciais(String email, String senha){
         Conexao conexao = new Conexao();
         JdbcTemplate con = conexao.getConexaoDoBanco();
