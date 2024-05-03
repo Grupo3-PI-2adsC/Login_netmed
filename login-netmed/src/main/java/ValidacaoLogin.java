@@ -1,12 +1,18 @@
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.group.rede.Rede;
+import com.github.britooo.looca.api.group.rede.RedeInterface;
+import com.github.britooo.looca.api.group.rede.RedeInterfaceGroup;
+import com.google.common.graph.Network;
+import oshi.SystemInfo;
+import oshi.hardware.NetworkIF;
+
 public class ValidacaoLogin {
 
     public Boolean validarLogin(String email, String senha) {
 
         BuscarCredenciais buscar = new BuscarCredenciais();
 
-        Boolean validar;
-
-        if(email.contains(" ") && senha.contains(" ")){
+        if (email.contains(" ") && senha.contains(" ")) {
             System.out.println("""
                     Não pode conter espaços no seu e-mail e senha!!!
                                  --------------------
@@ -23,49 +29,21 @@ public class ValidacaoLogin {
 //                    !senha.contains(")"))
 //            {
 //            System.out.println("""
-//                            Seu email não pode ter caracter especial!!!
+//                            Sua senha tem que conter caracter especial!!!
 //                                 --------------------
 //                           Insita um e-mail e senha válidos""");
 //            return false;
 //        }
+        Boolean validar;
 
         validar = buscar.validarCredenciais(email, senha);
 
-        if (validar){
+        if (validar) {
             return true;
-        }else {
+        } else {
             System.out.println("Seu e-mail ou sua senha estão incorretos");
             return false;
         }
     }
 
-    public Boolean validarCad(String nomeUserCad, String emailUserCad, String senhaUserCad, String confUserSenhaCad){
-
-        if (!senhaUserCad.equals(confUserSenhaCad)){
-
-            System.out.println("As senhas não são iguais");
-
-            return false;
-        }
-
-        Boolean validacao1 = validou(nomeUserCad);
-        Boolean validacao2 = validou(emailUserCad);
-        Boolean validacao3 = validou(senhaUserCad);
-        Boolean validacao4 = validou(confUserSenhaCad);
-
-        if (validacao1 && validacao2 && validacao3 && validacao4){
-            return true;
-        }
-
-        return false;
-    }
-
-    public Boolean validou(String varValidar){
-
-
-
-
-
-        return true;
-    }
 }
