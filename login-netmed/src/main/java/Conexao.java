@@ -12,7 +12,7 @@ public class Conexao {
         BasicDataSource dataSource = new BasicDataSource();
 
         String url = "jdbc:mysql://localhost:3306/java";
-        String username = "root";
+        String username = "Netmed";
         String password = "Netmed#1@@";
         /*
              Exemplo de driverClassName:
