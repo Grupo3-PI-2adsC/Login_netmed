@@ -13,7 +13,7 @@ public class Conexao {
 
         String url = "jdbc:mysql://localhost:3306/java";
         String username = "root";
-        String password = "senhaProj@1";
+        String password = "Netmed#1@@";
         /*
              Exemplo de driverClassName:
                 com.mysql.cj.jdbc.Driver <- EXEMPLO PARA MYSQL
