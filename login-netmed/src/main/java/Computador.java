@@ -141,7 +141,7 @@ public class Computador {
     public void buscarInfos(){
         Computador computador = new Computador();
         String sistemaFixo = computador.getSistema().toString();
-        System.out.println(sistemaFixo);
+        System.out.println(computador);
 
         try{
             TimeUnit.SECONDS.sleep(10);
