@@ -11,7 +11,6 @@ public class SistemaLogin {
         BuscarCredenciais cred = new BuscarCredenciais();
 
         cred.criacaoBanco();
-
         Scanner input = new Scanner(System.in);
         Scanner inputText = new Scanner(System.in);
 
@@ -36,7 +35,15 @@ public class SistemaLogin {
                     ----------------------------------------""");
             String senhaLogin = inputText.nextLine();
 
-            validou = validar.validarLogin(emailLogin, senhaLogin);
+            System.out.println("""
+                    ----------------------------------------
+                    |                                      |
+                    |        Confirmar a sua senha:        |
+                    |                                      |
+                    ----------------------------------------""");
+            String confirmarSenhaLogin = inputText.nextLine();
+
+            validou = validar.validarLogin(emailLogin, senhaLogin, confirmarSenhaLogin);
             if (validou) {
                 Computador computador01 = new Computador();
 

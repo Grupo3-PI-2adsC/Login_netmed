@@ -8,7 +8,7 @@ import oshi.hardware.NetworkIF;
 
 public class ValidacaoLogin {
 
-    public Boolean validarLogin(String email, String senha) {
+    public Boolean validarLogin(String email, String senha, String confirmarSenha) {
 
         BuscarCredenciais buscar = new BuscarCredenciais();
 
@@ -18,6 +18,8 @@ public class ValidacaoLogin {
                                  --------------------
                            Insita um e-mail e senha válidos""");
             return false;
+        } else if (!senha.equals(confirmarSenha)) {
+            return false
         }
 //        else if   (!senha.contains("!") ||
 //                    !senha.contains("#") ||
@@ -31,7 +33,7 @@ public class ValidacaoLogin {
 //            System.out.println("""
 //                            Sua senha tem que conter caracter especial!!!
 //                                 --------------------
-//                           Insita um e-mail e senha válidos""");
+//                           Insira um e-mail e senha válidos""");
 //            return false;
 //        }
         Boolean validar;
