@@ -19,7 +19,11 @@ public class ValidacaoLogin {
                            Insita um e-mail e senha válidos""");
             return false;
         } else if (!senha.equals(confirmarSenha)) {
-            return false
+            System.out.println("""
+                             As suas senhas não são iguais!!!
+                                 --------------------
+                              Verifique e tente de novo""");
+            return false;
         }
 //        else if   (!senha.contains("!") ||
 //                    !senha.contains("#") ||

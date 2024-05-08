@@ -8,9 +8,9 @@ import java.util.concurrent.TimeUnit;
 public class SistemaLogin {
 
     public static void main(String[] args) {
-        BuscarCredenciais cred = new BuscarCredenciais();
+//        BuscarCredenciais cred = new BuscarCredenciais();
 
-        cred.criacaoBanco();
+//        cred.criacaoBanco();
         Scanner input = new Scanner(System.in);
         Scanner inputText = new Scanner(System.in);
 
